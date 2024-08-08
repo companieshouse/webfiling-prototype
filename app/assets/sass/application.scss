@@ -4,3 +4,91 @@
 // 
 
 // Add extra styles here
+
+// Styles to try and mimick WebFiing UI
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+.govuk-width-container {
+    flex: 1;
+    display: flex; /* if you remove this line it works on Safari */
+  }
+.govuk-fieldset__legend, h1, h2, h3, h4, p, label, .govuk-button, ul, li, a {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+h1 {
+    font-size: 24px !important;
+}
+
+h2 {
+    font-size: 22px !important;
+}
+
+p, label, ul, li, a {
+    font-size: 18px !important;
+}
+.webfiling-menu ul li, .webfiling-menu p {
+    font-size: 16px !important;
+}
+.govuk-checkboxes__input {
+    width: 24px;
+    height: 24px;
+    margin-right: 20px;
+}
+
+.govuk-button {
+    color: #fff;
+    background-color: #286aa1;
+    border-color: #1c527f;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+}
+.govuk-button:hover {
+    background-color: #3a81ba;
+}
+.webfiling-menu {
+    padding: 0 3em 0 1.4em;
+}
+.govuk-template__body {
+    background-color: #f6f6f6;
+}
+.govuk-width-container {
+    background-color: #fff;
+}
+.govuk-header__container {
+    background-color: #00144D;
+    border: none;
+    padding: 0.4em 0 0;
+    margin-bottom: 0;
+}
+.govuk-header {
+    background-color: #00144D;
+    border: none;
+}
+.govuk-header__logo {
+    margin-bottom: 0;
+}
+.govuk-header__logotype-text {
+    font-size: 22px !important;
+    position: relative;
+    top: -0.3em;
+}
+a:hover {
+    text-decoration: none;
+}
+.webfiling-footer {
+    text-align: center;
+    background-color: #eaeaea;
+    border-top: 1px solid #d6d6d6;
+    padding: 0.5em 0;    
+    flex: 0;
+}
+.webfiling-footer a {
+    margin: 0 0.9em;
+    font-size: 16px !important;
+
+}
+
