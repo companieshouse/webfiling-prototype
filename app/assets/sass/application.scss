@@ -27,10 +27,10 @@ h2 {
 }
 
 p, label, ul, li, a, .govuk-warning-text {
-    font-size: 18px !important;
-}
-.webfiling-menu ul li, .webfiling-menu p {
     font-size: 16px !important;
+}
+.webfiling-menu ul li a, .webfiling-menu p, .webfiling-menu a {
+    font-size: 14px !important;
 }
 .govuk-checkboxes__input {
     width: 24px;
@@ -89,7 +89,7 @@ a:hover {
 }
 .webfiling-footer a {
     margin: 0 0.9em;
-    font-size: 16px !important;
+    font-size: 14px !important;
 
 }
 
