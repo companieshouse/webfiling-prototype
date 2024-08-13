@@ -47,6 +47,235 @@
   ]
 }) }}
 
+{% set germanyHtml %}
+{{ govukCheckboxes({
+  name: "germany-select",
+  fieldset: {
+    legend: {
+      text: "Which German regulated market?"
+    }
+  },
+  items: [
+    {
+      value: "#",
+      text: "Baden-Wuerttembergische Wertpapierboerse"
+    },
+     {
+      value: "#",
+      text: "Baden-wuerttembergische Wertpapierboerse (Regulierter Markt - Technical Platform 2)"
+    },
+     {
+      value: "#",
+      text: "Baden-wuerttembergische Wertpapierboerse (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Boerse Berlin (Berlin Second Regulated Market)"
+    },
+     {
+      value: "#",
+      text: "Boerse Berlin (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Boerse Berlin Equiduct Trading (Berlin Second Regulated Market)"
+    },
+     {
+      value: "#",
+      text: "Boerse Berlin Equiduct Trading (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Boerse Hamburg Lang and Schwarz Exchange (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Boerse Muenchen - Gettex - Regulierter Markt"
+    },
+     {
+      value: "#",
+      text: "Boerse Muenchen (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Duesseldorfer Boerse (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Duesseldorfer Boerse Quotrix (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Eurex Deutschland"
+    },
+     {
+      value: "#",
+      text: "European Energy Exchange"
+    },
+     {
+      value: "#",
+      text: "European Energy Exchange (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Frankfurter Wertpapierboerse (Regulierter Markt - Off-book)"
+    },
+     {
+      value: "#",
+      text: "Frankfurter Wertpapierboerse (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Frankfurter Wertpapierboerse Xetra (Reguliertermarkt – Off-book)"
+    },
+     {
+      value: "#",
+      text: "Hanseatische Wertpapierboerse Hamburg (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Niedersaechsiche Boerse Zu Hannover (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Tradegate Exchange (Regulierter Markt)"
+    },
+     {
+      value: "#",
+      text: "Xetra (Regulierter Markt)"
+    }
+  ]
+}) }}
+{% endset -%}
+
+{% set euHtml %}
+{{ govukCheckboxes({
+  name: "eu-select",
+  fieldset: {
+    legend: {
+      text: "Which EU regulated market?"
+    }
+  },
+  items: [
+    {
+      value: "#",
+      text: "Austria"
+    },
+      {
+      value: "#",
+      text: "Belgium"
+    },
+      {
+      value: "#",
+      text: "Bulgaria"
+    },
+      {
+      value: "#",
+      text: "Croatia"
+    },
+      {
+      value: "#",
+      text: "Cyprus"
+    },
+      {
+      value: "#",
+      text: "Czechia"
+    },
+      {
+      value: "#",
+      text: "Denmark"
+    },
+      {
+      value: "#",
+      text: "Estonia"
+    },
+      {
+      value: "#",
+      text: "Finland"
+    },
+      {
+      value: "#",
+      text: "France"
+    },
+      {
+      value: "#",
+      text: "Germany",
+      conditional: {
+      html: germanyHtml
+        }
+    },
+      {
+      value: "#",
+      text: "Greece"
+    },
+      {
+      value: "#",
+      text: "Hungary"
+    },
+      {
+      value: "#",
+      text: "Iceland"
+    },
+      {
+      value: "#",
+      text: "Ireland"
+    },
+      {
+      value: "#",
+      text: "Italy"
+    },
+      {
+      value: "#",
+      text: "Latvia"
+    },
+      {
+      value: "#",
+      text: "Lithuania"
+    },
+      {
+      value: "#",
+      text: "Luxembourg"
+    },
+      {
+      value: "#",
+      text: "Malta"
+    },
+      {
+      value: "#",
+      text: "Netherlands"
+    },
+      {
+      value: "#",
+      text: "Norway"
+    },
+      {
+      value: "#",
+      text: "Poland"
+    },
+      {
+      value: "#",
+      text: "Portugal"
+    },
+      {
+      value: "#",
+      text: "Romania"
+    },
+      {
+      value: "#",
+      text: "Slovakia"
+    },
+      {
+      value: "#",
+      text: "Spain"
+    },
+      {
+      value: "#",
+      text: "Sweden"
+    }
+  ]
+}) }}
+{% endset -%}
+
 
 {% set israelHtml %}
 {{ govukCheckboxes({
@@ -299,7 +528,10 @@
   items: [
     {
       value: "eu",
-      text: "The company is exempt from the requirement to obtain information and keep a register of its PSC because the company has voting shares admitted to trading on an EU regulated market."
+      text: "The company is exempt from the requirement to obtain information and keep a register of its PSC because the company has voting shares admitted to trading on an EU regulated market",
+        conditional: {
+        html: euHtml
+        }
     },
     {
       value: "schedule",
