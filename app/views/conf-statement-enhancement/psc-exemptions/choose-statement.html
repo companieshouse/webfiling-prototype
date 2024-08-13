@@ -1,0 +1,336 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Is the company exempt from keeping a people with significant control (PSC) register – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+      <form class="form" action="javascript:void(0)" method="post">
+
+  <div class="govuk-grid-row">
+
+
+         <div class="govuk-grid-column-one-quarter webfiling-menu">
+  {% include "/includes/webfiling-left-menu.html" %}
+
+         </div>
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+
+
+
+{{ govukRadios({
+  name: "exempt",
+  value: data['exempt'],
+  fieldset: {
+    legend: {
+      text: "Is the company exempt from keeping a people with significant control (PSC) register",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: "checked"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+   
+  ]
+}) }}
+
+
+{% set israelHtml %}
+{{ govukCheckboxes({
+  name: "israel-select",
+  fieldset: {
+    legend: {
+      text: "Which Israeli market?"
+    }
+  },
+  items: [
+    {
+      value: "tase",
+      text: "Tel Aviv Stock Exchange"
+    }
+  ]
+}) }}
+{% endset -%}
+
+{% set japanHtml %}
+{{ govukCheckboxes({
+  name: "japan-select",
+  fieldset: {
+    legend: {
+      text: "Which Japanese market?"
+    }
+  },
+  items: [
+    {
+      value: "fse",
+      text: "Fukuoka Stock Exchange"
+    },
+      {
+      value: "nse",
+      text: "Nagoya Stock Exchange"
+    },
+      {
+      value: "ose",
+      text: "Osaka Securities Exchange"
+    },
+      {
+      value: "sse",
+      text: "Sapporo Securities Exchange"
+    },
+      {
+      value: "tse",
+      text: "Tokyo Stock Exchange"
+    }
+  ]
+}) }}
+{% endset -%}
+
+{% set switzerlandHtml %}
+{{ govukCheckboxes({
+  name: "switzerland-select",
+  fieldset: {
+    legend: {
+      text: "Which Swiss market?"
+    }
+  },
+  items: [
+    {
+      value: "bxbe",
+      text: "BX Berne Exchange"
+    },
+      {
+      value: "sixse",
+      text: "SIX Swiss Exchange"
+    }
+  ]
+}) }}
+{% endset -%}
+
+{% set usaHtml %}
+{{ govukCheckboxes({
+  name: "usa-select",
+  fieldset: {
+    legend: {
+      text: "Which American market?"
+    }
+  },
+  items: [
+    {
+      value: "#",
+      text: "BATS Exchange, Inc."
+    },
+     {
+      value: "#",
+      text: "BATS Y-Exchange, Inc."
+    }, {
+      value: "#",
+      text: "BOX Options Exchange LLC"
+    },
+     {
+      value: "#",
+      text: "Chicago Board Options Exchange, Incorporated"
+    },
+     {
+      value: "#",
+      text: "Chicago Stock Exchange, Inc."
+    }, {
+      value: "#",
+      text: "EDGA Exchange, Inc."
+    },
+     {
+      value: "#",
+      text: "EDGX Exchange, Inc."
+    }, {
+      value: "#",
+      text: "International Securities Exchange, LLC"
+    },
+     {
+      value: "#",
+      text: "ISE Gemini LLC"
+    },
+     {
+      value: "#",
+      text: "Miami International Securities Exchange LLC"
+    },
+     {
+      value: "#",
+      text: "NASDAQ OMX BX, Inc."
+    },
+     {
+      value: "#",
+      text: "NASDAQ OMX PHLX LLC"
+    },
+     {
+      value: "#",
+      text: "The NASDAQ Stock Market LLC"
+    },
+     {
+      value: "#",
+      text: "National Stock Exchange, Inc."
+    },
+     {
+      value: "#",
+      text: "New York Stock Exchange LLC"
+    },
+     {
+      value: "#",
+      text: "NYSE Arca, Inc."
+    }, 
+    {
+      value: "#",
+      text: "NYSE MKT LLC"
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+{% set scheduleHtml %}
+{{ govukCheckboxes({
+  name: "schedule-select",
+  fieldset: {
+    legend: {
+      text: "Which market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016?"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "israel",
+      text: "Israel",
+        conditional: {
+        html: israelHtml
+        }
+    },
+    {
+      value: "japan",
+      text: "Japan",
+        conditional: {
+        html: japanHtml
+        }
+    },
+    {
+      value: "switzerland",
+      text: "Switzerland",
+        conditional: {
+        html: switzerlandHtml
+        }
+    },
+    {
+      value: "usa",
+      text: "United States of America",
+        conditional: {
+        html: usaHtml
+        }
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+
+
+
+{% set ukHtml %}
+{{ govukCheckboxes({
+  name: "uk-select",
+  fieldset: {
+    legend: {
+      text: "Which UK regulated market?"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "tlme",
+      text: "The London Metal Exchange"
+    },
+    {
+      value: "ife",
+      text: "ICE Futures Europe"
+    },
+    {
+      value: "lse",
+      text: "London Stock Exchange"
+    },
+    {
+      value: "asel",
+      text: "Aquis Stock Exchange Limited"
+    },
+    {
+      value: "ceerm",
+      text: "Cboe Europe Equities Regulated Market"
+    }
+  ]
+}) }}
+{% endset -%}
+
+
+
+
+{{ govukCheckboxes({
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Please select the appropriate statement",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Select all that apply"
+  },
+  items: [
+    {
+      value: "eu",
+      text: "The company is exempt from the requirement to obtain information and keep a register of its PSC because the company has voting shares admitted to trading on an EU regulated market."
+    },
+    {
+      value: "schedule",
+      text: "The company is exempt from the requirement to obtain information and keep a register of its PSC because the company has voting shares admitted to trading on a market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016",
+        conditional: {
+        html: scheduleHtml
+        }
+    },
+    {
+      value: "uk",
+      text: "The company is exempt from the requirement to obtain information and keep a register of its PSC because the company has voting shares admitted to trading on a UK regulated market",
+        conditional: {
+        html: ukHtml
+      }
+    }
+  ]
+}) }}
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+
+  
+  </div>
+
+{% endblock %}
