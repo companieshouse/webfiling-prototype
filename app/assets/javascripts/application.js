@@ -4,5 +4,25 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
+
+
+
+//show and hide regulated market 
+$(document).ready(function () {
+  // Code snippet for the regulated market  page
+  $('#second-market-link').click(function() {
+    $('#second-market').show();
+    $('#second-market-link').hide();
+    return false;
+  });
+  $('#third-market-link').click(function() {
+    $('#third-market').show();
+    $('#third-market-link').hide();
+    return false;
+  });       
+})
+
+
+
   // Add JavaScript here
 })
