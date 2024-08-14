@@ -48,7 +48,7 @@
 }) }}
 
 {% set germanyHtml %}
-{{ govukCheckboxes({
+{{ govukRadios({
   name: "germany-select",
   fieldset: {
     legend: {
@@ -149,7 +149,7 @@
 {% endset -%}
 
 {% set euHtml %}
-{{ govukCheckboxes({
+{{ govukRadios({
   name: "eu-select",
   fieldset: {
     legend: {
@@ -278,7 +278,7 @@
 
 
 {% set israelHtml %}
-{{ govukCheckboxes({
+{{ govukRadios({
   name: "israel-select",
   fieldset: {
     legend: {
@@ -295,7 +295,7 @@
 {% endset -%}
 
 {% set japanHtml %}
-{{ govukCheckboxes({
+{{ govukRadios({
   name: "japan-select",
   fieldset: {
     legend: {
@@ -328,7 +328,7 @@
 {% endset -%}
 
 {% set switzerlandHtml %}
-{{ govukCheckboxes({
+{{ govukRadios({
   name: "switzerland-select",
   fieldset: {
     legend: {
@@ -349,7 +349,7 @@
 {% endset -%}
 
 {% set usaHtml %}
-{{ govukCheckboxes({
+{{ govukRadios({
   name: "usa-select",
   fieldset: {
     legend: {
@@ -428,15 +428,12 @@
 
 
 {% set scheduleHtml %}
-{{ govukCheckboxes({
+{{ govukRadios({
   name: "schedule-select",
   fieldset: {
     legend: {
       text: "Which market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016?"
     }
-  },
-  hint: {
-    text: "Select all that apply."
   },
   items: [
     {
@@ -476,15 +473,12 @@
 
 
 {% set ukHtml %}
-{{ govukCheckboxes({
+{{ govukRadios({
   name: "uk-select",
   fieldset: {
     legend: {
       text: "Which UK regulated market?"
     }
-  },
-  hint: {
-    text: "Select all that apply."
   },
   items: [
     {
@@ -514,16 +508,13 @@
 
 
 
-{{ govukCheckboxes({
+{{ govukRadios({
   name: "statement",
   fieldset: {
     legend: {
       text: "Please select the appropriate statement",
       classes: "govuk-fieldset__legend--s"
     }
-  },
-  hint: {
-    text: "Select all that apply"
   },
   items: [
     {
