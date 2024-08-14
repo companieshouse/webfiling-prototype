@@ -1,0 +1,161 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Regulated markets you have added – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+      <form class="form" action="exemptions-check-answers" method="post">
+
+  <div class="govuk-grid-row">
+
+
+         <div class="govuk-grid-column-one-quarter webfiling-menu">
+  {% include "/includes/webfiling-left-menu.html" %}
+
+         </div>
+    <div class="govuk-grid-column-three-quarters">
+
+<p>Filing for: ACME COMPANY LIMITED (01234567)</p>
+
+
+
+      <h1 class="govuk-heading-l">Regulated markets you have added:</h1>
+
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "An EU regulated market"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Remove",
+          visuallyHiddenText: "of University of Gloucestershire"
+        },
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "from University of Gloucestershire"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Country"
+      },
+      value: {
+        html: "Germany"
+      }
+    },
+    {
+      key: {
+        text: "Market"
+      },
+      value: {
+        html: "Boerse Berlin Equiduct Trading (Berlin Second Regulated Market)"
+      }
+    },
+    {
+      key: {
+        text: "Published"
+      },
+      value: {
+        html: "On the regulated market I have selected"
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "A market listed in schedule 1 of The Register of People with Significant Control Regulations 2016"
+    },
+    actions: {
+      items: [
+        {
+          href: "#",
+          text: "Remove",
+          visuallyHiddenText: "of University of Bristol"
+        },
+        {
+          href: "#",
+          text: "Change",
+          visuallyHiddenText: "from University of Bristol"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Country"
+      },
+      value: {
+        html: "Japan"
+      }
+    },
+    {
+      key: {
+        text: "Market"
+      },
+      value: {
+        html: "Fukuoka Stock Exchange"
+      }
+    },
+    {
+      key: {
+        text: "Published"
+      },
+      value: {
+        html: "On the issuer website - www.example.com/listing"
+      }
+    }
+  ]
+}) }}
+
+
+
+
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  name: "addMarket",
+  fieldset: {
+    legend: {
+      text: "Do you need to add another regulated market?",
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+
+       {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+
+    

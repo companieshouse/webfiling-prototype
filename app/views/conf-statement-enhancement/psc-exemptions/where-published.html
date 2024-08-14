@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Where is this exemption information published? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+      <form class="form" action="exemptions-check-answers" method="post">
+
+  <div class="govuk-grid-row">
+
+
+         <div class="govuk-grid-column-one-quarter webfiling-menu">
+  {% include "/includes/webfiling-left-menu.html" %}
+
+         </div>
+    <div class="govuk-grid-column-three-quarters">
+
+
+<p>Filing for: ACME COMPANY LIMITED (01234567)</p>
+
+
+
+
+
+
+
+
+{% set issuerHtml %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Select website"
+  },
+  items: [
+    {
+      value: "1",
+      text: "Website 1"
+    },
+    {
+      value: "2",
+      text: "Website 2"
+    },
+    {
+      value: "3",
+      text: "Website 3"
+    },
+    {
+      value: "4",
+      text: "Website 4"
+    }
+  ]
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  name: "contact",
+  fieldset: {
+    legend: {
+      text: "Where is this exemption information published?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "selected-market",
+      text: "On the regulated market I have selected",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "issuer",
+      text: "On the issuer website",
+      conditional: {
+        html: issuerHtml
+      }
+    },
+    {
+      value: "company",
+      text: "On the company website"
+    },
+    {
+      value: "other",
+      text: "Other"
+    }
+  ]
+}) }}
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+
+  
+  </div>
+
+{% endblock %}
