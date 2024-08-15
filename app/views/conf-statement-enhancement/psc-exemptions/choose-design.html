@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Is the company exempt from keeping a people with significant control (PSC) register – {{ serviceName }} – GOV.UK Prototype Kit
+  Choose a design – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -9,7 +9,8 @@
 {% block content %}
       <form class="form" action="/choose-design" method="post">
 
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
 
 
@@ -47,6 +48,10 @@
 
       </form>
 
+  </div>
 
+
+  
+  </div>
 
 {% endblock %}
