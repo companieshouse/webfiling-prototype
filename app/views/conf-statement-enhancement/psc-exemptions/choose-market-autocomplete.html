@@ -19,58 +19,10 @@
 <p>Filing for: ACME COMPANY LIMITED (01234567)</p>
 
 
-{{ govukRadios({
-  name: "exempt",
-  value: data['exempt'],
-  fieldset: {
-    legend: {
-      text: "Is the company exempt from keeping a people with significant control (PSC) register?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes",
-      checked: "checked"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-   
-  ]
-}) }}
 
 
 
-{{ govukCheckboxes({
-  name: "statement",
-  fieldset: {
-    legend: {
-      text: "Why is the company exempt?",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  hint: {
-    text: "Select all that apply. The company is exempt from the requirement to obtain information and keep a register of its PSCs because the company has voting shares admitted to trading on:"
-  },
-  items: [
-    {
-      value: "eu",
-      text: "an EU regulated market"
-    },
-    {
-      value: "schedule",
-      text: "a market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016"
-    },
-    {
-      value: "uk",
-      text: "a UK regulated market"
-    }
-  ]
-}) }}
+
 
 
         <div class="govuk-form-group">

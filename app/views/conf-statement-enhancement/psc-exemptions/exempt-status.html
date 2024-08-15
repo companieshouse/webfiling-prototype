@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Is the company exempt from keeping a people with significant control (PSC) register – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+      <form class="form" action="/exempt-status" method="post">
+
+  <div class="govuk-grid-row">
+
+
+         <div class="govuk-grid-column-one-quarter webfiling-menu">
+  {% include "/includes/webfiling-left-menu.html" %}
+
+         </div>
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+<p>Filing for: ACME COMPANY LIMITED (01234567)</p>
+
+
+{{ govukRadios({
+  name: "exempt",
+  value: data['exempt'],
+  fieldset: {
+    legend: {
+      text: "Is the company exempt from keeping a people with significant control (PSC) register?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: "checked"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+   
+  ]
+}) }}
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+
+  
+  </div>
+
+{% endblock %}

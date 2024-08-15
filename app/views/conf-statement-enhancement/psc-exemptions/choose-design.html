@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Is the company exempt from keeping a people with significant control (PSC) register – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+      <form class="form" action="/choose-design" method="post">
+
+
+
+
+
+
+
+{{ govukRadios({
+  name: "design",
+    value: data['design'],
+  fieldset: {
+    legend: {
+      text: "Choose a design",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "autocomplete",
+      text: "Autocomplete"
+    },
+    {
+      value: "nested",
+      text: "Nested radio buttons"
+    }
+   
+  ]
+}) }}
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+
+
+{% endblock %}
