@@ -24,101 +24,29 @@
       <h1 class="govuk-heading-l">Regulated markets you have added:</h1>
 
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "An EU regulated market"
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Remove",
-          visuallyHiddenText: "of University of Gloucestershire"
-        },
-        {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "from University of Gloucestershire"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Country"
-      },
-      value: {
-        html: "Germany"
-      }
-    },
-    {
-      key: {
-        text: "Market"
-      },
-      value: {
-        html: "Boerse Berlin Equiduct Trading (Berlin Second Regulated Market)"
-      }
-    },
-    {
-      key: {
-        text: "Published"
-      },
-      value: {
-        html: "On the regulated market I have selected"
-      }
-    }
-  ]
-}) }}
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "A market listed in schedule 1 of The Register of People with Significant Control Regulations 2016"
-    },
-    actions: {
-      items: [
-        {
-          href: "#",
-          text: "Remove",
-          visuallyHiddenText: "of University of Bristol"
-        },
-        {
-          href: "#",
-          text: "Change",
-          visuallyHiddenText: "from University of Bristol"
-        }
-      ]
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Country"
-      },
-      value: {
-        html: "Japan"
-      }
-    },
-    {
-      key: {
-        text: "Market"
-      },
-      value: {
-        html: "Fukuoka Stock Exchange"
-      }
-    },
-    {
-      key: {
-        text: "Published"
-      },
-      value: {
-        html: "On the issuer website - www.example.com/listing"
-      }
-    }
-  ]
-}) }}
+      <div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <p>(Germany) Boerse Berlin Equiduct Trading (Berlin Second Regulated Market) - Published on the regulated market I have selected</p>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">(Germany) Boerse Berlin Equiduct Trading (Berlin Second Regulated Market) - Published on the regulated market I have selected</span></a>
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <p>(Japan) Fukuoka Stock Exchange - Published	on the issuer website www.example.com/something</p>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden">(Japan) Fukuoka Stock Exchange - Published	on the issuer website www.example.com/something</span></a>
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
 
 
 
@@ -129,7 +57,8 @@
   fieldset: {
     legend: {
       text: "Do you need to add another regulated market?",
-      classes: "govuk-fieldset__legend--xl"
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
     }
   },
   items: [
