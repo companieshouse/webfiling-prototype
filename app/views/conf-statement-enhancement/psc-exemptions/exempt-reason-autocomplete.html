@@ -29,7 +29,7 @@
   name: "statement",
   fieldset: {
     legend: {
-      text: "Why is the company exempt from keeping a people with significant control (PSC) register?",
+      text: "Which type of regulated market does the company have voting shares admitted to?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
@@ -37,21 +37,21 @@
   items: [
     {
       value: "eu",
-      text: "The company is exempt from the requirement to obtain information and keep a register of its PSC because the company has voting shares admitted to trading on an EU regulated market",
+      text: "A UK regulated market",
         conditional: {
         html: euHtml
         }
     },
     {
       value: "schedule",
-      text: "The company is exempt from the requirement to obtain information and keep a register of its PSC because the company has voting shares admitted to trading on a market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016",
+      text: "An EU regulated market",
         conditional: {
         html: scheduleHtml
         }
     },
     {
       value: "uk",
-      text: "The company is exempt from the requirement to obtain information and keep a register of its PSC because the company has voting shares admitted to trading on a UK regulated market",
+      text: "A market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016",
         conditional: {
         html: ukHtml
       }
