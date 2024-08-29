@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Throughout the confirmation statement period was the company an issuer to which DTR5 applies, with shares admitted to trading on a market? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+      <form class="form" action="exempt-status" method="post">
+
+  <div class="govuk-grid-row">
+
+
+         <div class="govuk-grid-column-one-quarter webfiling-menu">
+  {% include "/includes/webfiling-left-menu.html" %}
+
+         </div>
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+<p>Filing for: ACME COMPANY LIMITED (01234567)</p>
+
+
+
+
+{{ govukRadios({
+  name: "statement",
+  fieldset: {
+    legend: {
+      text: 'Throughout the confirmation statement period was the company an issuer to which DTR5 applies, with shares admitted to trading on a market?',
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+    hint: {
+    html: '<a href="https://ewf-stg-aws.companieshouse.gov.uk/autopage?form=CS01MUD#">Find out what this means</a>'
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"    },
+    {
+      value: "no",
+      text: "No"
+    }
+   
+  ]
+}) }}
+
+<p>If you answer NO to the above question you will be asked to provide the names and addresses of those shareholders with 5% or more shareholdings as at the date of the confirmation statement.</p>
+
+
+
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+
+  
+  </div>
+
+{% endblock %}

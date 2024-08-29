@@ -9,7 +9,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 router.post('/choose-design', function(request, response) {
-    response.redirect("/conf-statement-enhancement/psc-exemptions/exempt-status")
+    response.redirect("/conf-statement-enhancement/psc-exemptions/trading-on-a-market")
 })
 
 router.post('/exempt-status', function(request, response) {
