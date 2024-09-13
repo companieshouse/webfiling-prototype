@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What date did the company first have voting shares admitted to trading on this market? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+      <form class="form" action="exemptions-check-answers" method="post">
+
+  <div class="govuk-grid-row">
+
+
+         <div class="govuk-grid-column-one-quarter webfiling-menu">
+  {% include "/includes/webfiling-left-menu.html" %}
+
+         </div>
+    <div class="govuk-grid-column-three-quarters">
+
+
+<p>Filing for: ACME COMPANY LIMITED (01234567)</p>
+
+
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby=" date-exemption-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+       What date did the company first have voting shares admitted to trading on this market?
+      </h1>
+    </legend>
+    <div id=" date-exemption-hint" class="govuk-hint">
+      For example, 27 March 2022
+    </div>
+    
+  <label class="govuk-visually-hidden" for="day">
+    Day
+  </label>
+  <select class="govuk-select webfiling-day" id="day" name="day">
+    <option value="day" selected>Day:</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="etc">etc</option>
+
+  </select>
+
+    <label class="govuk-visually-hidden" for="month">
+    Month
+  </label>
+  <select class="govuk-select webfiling-month" id="month" name="month">
+    <option value="month" selected>Month:</option>
+    <option value="jan">January</option>
+    <option value="feb">February</option>
+   <option value="etc">etc</option>
+
+  </select>
+
+    <label class="govuk-visually-hidden" for="year">
+   Year
+  </label>
+  <select class="govuk-select  webfiling-year" id="year" name="year">
+    <option value="published" selected>Year:</option>
+    <option value="2024">2024</option>
+    <option value="2023">2023</option>
+    <option value="etc">etc</option>
+
+  </select>
+
+
+  </fieldset>
+</div>
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+
+  
+  </div>
+
+{% endblock %}
