@@ -15,10 +15,10 @@ router.post('/choose-design', function(request, response) {
 router.post('/exempt-status', function(request, response) {
 
     var design = request.session.data['design']
-    if (design == "autocomplete"){
-        response.redirect("/conf-statement-enhancement/psc-exemptions/choose-market-autocomplete")
-    } else {
+    if (design == "nested"){
         response.redirect("/conf-statement-enhancement/psc-exemptions/exempt-reason")
+    } else {
+        response.redirect("/conf-statement-enhancement/psc-exemptions/choose-market-autocomplete")
     }
 })
 
