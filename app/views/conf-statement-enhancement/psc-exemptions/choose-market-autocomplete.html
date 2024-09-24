@@ -43,7 +43,21 @@
 
   
   </div>
-        </form>
+</form>
   <script src="/public/javascripts/accessible-autocomplete.js"></script>
-  <script src="/public/javascripts/regulated-markets.js"></script>
+
+    {% if (data['statement'] == "uk") %}
+      <script src="/public/javascripts/regulated-markets-uk.js"></script>
+    {% elseif (data['statement'] == "eu") %}
+      <script src="/public/javascripts/regulated-market-eu.js"></script>
+    {% elseif (data['statement'] == "schedule") %}
+      <script src="/public/javascripts/regulated-markets-other.js"></script>
+    {% else %}
+      <script src="/public/javascripts/regulated-markets.js"></script>
+    {% endif %}
+
+
+
+
+
 {% endblock %}

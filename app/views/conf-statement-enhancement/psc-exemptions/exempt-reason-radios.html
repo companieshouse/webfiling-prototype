@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Is the company exempt from keeping a people with significant control (PSC) register – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+      <form class="form" action="/exempt-reason-radios" method="post">
+
+  <div class="govuk-grid-row">
+
+
+         <div class="govuk-grid-column-one-quarter webfiling-menu">
+  {% include "/includes/webfiling-left-menu.html" %}
+
+         </div>
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+<p>Filing for: ACME COMPANY LIMITED (01234567)</p>
+
+
+
+
+
+{{ govukRadios({
+  name: "statement",
+  fieldset: {
+    legend: {
+      text: "Which regulated market does the company have voting shares admitted to?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+      {
+      value: "uk",
+      text: "A UK regulated market"
+    },
+    {
+      value: "eu",
+      text: "An EU regulated market"
+    },
+    {
+      value: "schedule",
+      text: "A regulated market in another country",
+      hint: {
+        text: "This must be a market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016"
+      }
+    }
+
+  ]
+}) }}
+
+
+
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+
+
+  
+  </div>
+
+{% endblock %}
