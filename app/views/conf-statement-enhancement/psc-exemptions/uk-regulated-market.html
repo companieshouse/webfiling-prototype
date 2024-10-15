@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ Which UK regulated market does the company have voting shares admitted to? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+      <form class="form" action="uk-regulated-market" method="post">
+
+  <div class="govuk-grid-row">
+
+
+         <div class="govuk-grid-column-one-quarter webfiling-menu">
+  {% include "/includes/webfiling-left-menu.html" %}
+
+         </div>
+    <div class="govuk-grid-column-three-quarters">
+
+
+
+<p>Filing for: ACME COMPANY LIMITED (01234567)</p>
+
+
+
+
+{{ govukRadios({
+  name: "ukMarket",
+  fieldset: {
+    legend: {
+      text: 'Which UK regulated market does the company have voting shares admitted to?',
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "The London Metal Exchange",
+      text: "The London Metal Exchange"    
+      },
+    {
+      value: "ICE Futures Europe",
+      text: "ICE Futures Europe"
+    },
+    {
+      value: "London Stock Exchange",
+      text: "London Stock Exchange"
+    },
+    {
+      value: "Aquis Stock Exchange Limited",
+      text: "Aquis Stock Exchange Limited"
+    },
+    {
+      value: "Cboe Europe Equities Regulated Market",
+      text: "Cboe Europe Equities Regulated Market"
+    }
+
+  ]
+}) }}
+
+
+
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <a href="javascript:void(0)" class="webfiling-back-link">Back</a>
+
+      </form>
+
+    </div>
+
+
+  
+  </div>
+
+{% endblock %}
