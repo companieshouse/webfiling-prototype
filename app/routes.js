@@ -31,19 +31,12 @@ router.post('/trading-on-a-market', function(request, response) {
 
 
 
-router.post('/exempt-reason-radios', function(request, response) {
+
+
+router.post('/exempt-reason-autocomplete', function(request, response) {
     response.redirect("/conf-statement-enhancement/psc-exemptions/choose-market-autocomplete")
 })
 
-router.post('/choose-market-autocomplete', function(request, response) {
-
-    var statement = request.session.data['statement']
-    if (statement == "uk"){
-        response.redirect("/conf-statement-enhancement/psc-exemptions/uk-regulated-market")
-    } else {
-        response.redirect("/conf-statement-enhancement/psc-exemptions/choose-market-autocomplete")
-    }
-})
 
 router.post('/exempt-status', function(request, response) {
 
