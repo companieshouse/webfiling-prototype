@@ -1,6 +1,4 @@
 var countries = [
-  'United Kingdom (UK) - The London Metal Exchange',
-  'United Kingdom (UK) - ICE Futures Europe',
   'United Kingdom (UK) - London Stock Exchange',
   'United Kingdom (UK) - Aquis Stock Exchange Limited',
   'United Kingdom (UK) - Cboe Europe Equities Regulated Market'
