@@ -37,12 +37,9 @@
         items: [
           {
             value: "confirm",
-            text: "I confirm that the company is exempt from Part 21A of the Companies Act 2006, so does not need to provide Companies House with information about its people with significant control (PSCs)."
-          }
-        ]
-      }) }}
-
-
+            html: '
+            
+            <p class="govuk-body">I confirm that the company is exempt from Part 21A of the Companies Act 2006, so does not need to provide Companies House with information about its people with significant control (PSCs).</p>
 <p class="govuk-body">This is because the company has voting shares admitted to trading on:</p>
 
 <ul class="govuk-list govuk-list--bullet">
@@ -51,6 +48,13 @@
   <li>A market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016<br> 
   Switzerland - BX Berne Exchange</li>
 </ul>
+            
+            '
+          }
+        ]
+      }) }}
+
+
 
      
        {{ govukButton({
