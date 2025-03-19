@@ -55,7 +55,7 @@ router.post('/exemptions-check-answers', function(request, response) {
     if (addMarket == "yes"){
         response.redirect("/conf-statement-enhancement/psc-exemptions/exempt-reason-autocomplete")
     } else {
-        response.redirect("/conf-statement-enhancement/psc-exemptions/confirmation-statement-accordion")
+        response.redirect("/conf-statement-enhancement/psc-exemptions/exemptions-statement")
     }
 })
 

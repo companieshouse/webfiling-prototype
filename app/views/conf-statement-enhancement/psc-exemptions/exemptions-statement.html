@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  PSC exemption statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+         <div class="govuk-grid-column-one-quarter webfiling-menu">
+  {% include "/includes/webfiling-left-menu.html" %}
+
+         </div>
+    <div class="govuk-grid-column-three-quarters">
+      <form class="form" action="confirmation-statement-accordion" method="post">
+
+<p>Filing for: ACME COMPANY LIMITED (01234567)</p>
+
+
+
+      <h1 class="govuk-heading-l">PSC exemption statement</h1>
+
+
+      {{ govukCheckboxes({
+        name: "confirmPSCExemptionStatement",
+        fieldset: {
+          legend: {
+            text: "PSC exemption statement",
+            isPageHeading: true,
+            classes: "govuk-visually-hidden"
+          }
+        },
+        items: [
+          {
+            value: "confirm",
+            text: "I confirm that the company is exempt from Part 21A of the Companies Act 2006, so does not need to provide Companies House with information about its people with significant control (PSCs)."
+          }
+        ]
+      }) }}
+
+
+<p class="govuk-body">This is because the company has voting shares admitted to trading on:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>An EU regulated market <br>
+    (Germany) Boerse Berlin Equiduct Trading (Berlin Second Regulated Market)</li>
+  <li>A market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016<br> 
+  Switzerland - BX Berne Exchange</li>
+</ul>
+
+     
+       {{ govukButton({
+          text: "Continue"
+        }) }}
+        <a href="date-of-exemption" class="webfiling-back-link">Back</a>
+
+</form>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+    

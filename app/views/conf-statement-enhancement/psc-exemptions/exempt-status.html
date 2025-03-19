@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-On the confirmation statement date, does the company have voting shares admitted to trading on a regulated market? – {{ serviceName }} – GOV.UK Prototype Kit
+On the confirmation statement date, is the company exempt from Part 21A of the Companies Act 2006? – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -27,18 +27,21 @@ On the confirmation statement date, does the company have voting shares admitted
   name: "exempt",
   fieldset: {
     legend: {
-      text: "On the confirmation statement date, does the company have voting shares admitted to trading on a UK or EU regulated market, or a market listed in Schedule 1 of the Register of People with Significant Control Regulations 2016?",
+      text: "On the confirmation statement date, is the company exempt from Part 21A of the Companies Act 2006?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
   },
     hint: {
-    text: "If the answer is yes, this means the company is not required to provide Companies House with information about its people with significant control (PSCs). "
+    text: "This means that it does not need to provide information about its people with significant control (PSCs) to Companies House."
   },
   items: [
     {
       value: "yes",
-      text: "Yes"
+      text: "Yes",
+         hint: {
+        text: "We'll ask you for more information about why the company is exempt on the following pages"
+      }
     },
     {
       value: "no",
