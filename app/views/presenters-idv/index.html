@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1>
+      Presenters IDV
+    </h1>
+
+       {{ govukWarningText({
+      text: "This prototype is being actively worked on - things might break or change very quickly",
+      iconFallbackText: "Warning"
+    }) }}
+
+      <h2>Shortcuts</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Start</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Sign in</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">What is the company number?</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Confirm this is the correct company</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Company authentication</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="/misc/company-overview">Company profile</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">AD01 start screen</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="presenter-type">What type of presenter are you?</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Confirm the ACSP statements</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Confirm your presenter info</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Confirm the officer/employee/corp director statements</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Stop screen</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Has your identity been verified for Companies House?</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Enter your details</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">You need to verify your identity first</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Guide the user to the next steps</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Verify your identity for Companies House Service</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">We're taking you to verify your identity with GOV.UK</a></li>
+        <li><a class="govuk-link govuk-link--no-visited-state" href="HERE">Identity verification complete</a></li>
+      </ul>
+
+
+  </div>
+</div>
+
+{% endblock %}

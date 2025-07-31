@@ -5,6 +5,10 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
+{% block head %}
+  {{ super() }} {# Keep application.css and any other head content #}
+  <link rel="stylesheet" href="/public/stylesheets/webfiling.css">
+{% endblock %}
 
 {% block header %}
 {% include "includes/webfiling-header.html" %} 
