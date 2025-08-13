@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+
+
+{% block content %}
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-one-quarter webfiling-menu">
+{% include "/includes/webfiling-left-menu.html" %}
+</div>
+
+
+<div class="govuk-grid-column-three-quarters wfOverview">
+<form action="/V1/presenter-type-radio" method="post">
+  {{ govukRadios({
+    name: "what-type-of-presenter",
+    fieldset: {
+      legend: {
+        text: "What type of presenter are you?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [
+      { value: "acsp", text: "ACSP or employee of ACSP" },
+      { value: "director", text: "Director of a company" },
+      { value: "employeeCompany", text: "Employee of a company" },
+      { value: "employeeCorporate", text: "Employee of a corporate director" },
+      { value: "none", text: "None of the above" }
+    ]
+  }) }}
+
+  {{ govukButton({
+    text: "Save and continue"
+  }) }}
+</form>
+</div>
+</div>
+
+{% endblock %}
